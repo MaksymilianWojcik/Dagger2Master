@@ -47,4 +47,11 @@
  
 
 
+ ## Scopes
+ 
+ ### @Singleton
+ Caly life aplikacji.
+ Oznaczajac np AppComponent adnotacja @Singleton mowimy Daggerowi, ze AppComponent jest właścicielem @Singleton scope.
+ Nastepnie dependencje w AppModule, nalezace do tego AppComponentu tez sa czescia tego, wiec tez je oznaczamy @Singleton
+ 
  

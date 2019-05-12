@@ -7,6 +7,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.request.RequestOptions;
 
+import javax.inject.Singleton;
+
 import androidx.core.content.ContextCompat;
 import dagger.Module;
 import dagger.Provides;
@@ -16,6 +18,7 @@ import pl.com.bubka.dagger2master.R;
 public class AppModule { //ta juz nie bedzie abstract, bo w tej nie bedziemy uzywac @ContributresAndroidInjector
     // tutaj umieszczam dependency dla calej apki
 
+    @Singleton
     @Provides
     static RequestOptions provideRequestOptions(){
         return new RequestOptions()
@@ -23,12 +26,14 @@ public class AppModule { //ta juz nie bedzie abstract, bo w tej nie bedziemy uzy
                 .error(R.drawable.white_background);
     }
 
+    @Singleton
     @Provides //mamy dostep do application w tym module dzieki @BidnsIntance w AppComponencie
     static RequestManager provideGlideInstance(Application application, RequestOptions requestOptions){
         return Glide.with(application)
                 .setDefaultRequestOptions(requestOptions);
     }
 
+    @Singleton
     @Provides
     static Drawable provideAppDrawable(Application application){
         return ContextCompat.getDrawable(application, R.drawable.logo);
