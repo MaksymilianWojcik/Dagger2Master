@@ -8,11 +8,13 @@ import dagger.android.AndroidInjector;
 import dagger.android.support.AndroidSupportInjectionModule;
 import pl.com.bubka.dagger2master.BaseApplication;
 
-@Component(modules = {AndroidSupportInjectionModule.class, ActivityBuildersModule.class})
+@Component(modules = {AndroidSupportInjectionModule.class,
+        ActivityBuildersModule.class,
+        AppModule.class})
 public interface AppComponent extends AndroidInjector<BaseApplication> {
 
     @Component.Builder
-    interface Builder{
+    interface Builder {
 
         @BindsInstance
         Builder application(Application application);

@@ -12,8 +12,4 @@ public abstract class ActivityBuildersModule {
     @ContributesAndroidInjector //wszedzie gdzie to uzywamy to klasa musi byc abstrackyjna
     abstract AuthActivity contributeAuthActivity();
 
-    @Provides
-    static String someString(){
-        return "this is a test string";
-    }
 }

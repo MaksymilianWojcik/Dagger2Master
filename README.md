@@ -45,6 +45,6 @@
  ## Activities components
  Sa na rownoleglym poziomie, ale tylko jeden aktywyny w danym czasie. Sa to subkomponenty AppComponenta. 
  
- ### AuthActivity.java
- 
+
+
  
