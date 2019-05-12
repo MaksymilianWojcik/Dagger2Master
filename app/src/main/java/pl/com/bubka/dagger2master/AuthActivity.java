@@ -1,7 +1,10 @@
 package pl.com.bubka.dagger2master;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
+import android.widget.ImageView;
+
+import com.bumptech.glide.RequestManager;
 
 import javax.inject.Inject;
 
@@ -11,18 +14,24 @@ public class AuthActivity extends DaggerAppCompatActivity {
 
 
     private static final String TAG = "AuthActivity";
-    @Inject
-    String testString;
 
     @Inject
-    boolean isAppNull;
+    Drawable logo;
+
+    @Inject
+    RequestManager requestManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
 
-        Log.i(TAG, "onCreate: teststring: " + testString);
-        Log.i(TAG, "onCreate: isAppNull: " + isAppNull);
+        setLogo();
+    }
+
+    private void setLogo() {
+        requestManager
+                .load(logo)
+                .into((ImageView) findViewById(R.id.login_logo));
     }
 }
