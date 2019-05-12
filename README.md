@@ -55,3 +55,17 @@
  Nastepnie dependencje w AppModule, nalezace do tego AppComponentu tez sa czescia tego, wiec tez je oznaczamy @Singleton
  
  
+ ## Problem z ViewModelsami
+ Domyslnei nie mozna injectowac dependency w viewmodelach. Co smieszne troche, bo zarowno dagger jak i viewmodelsy (jetpack) sa od googla :D
+ Wiecej tutaj: [ViewModel z daggerem](www.techyourchance.com/dependency-injection-viewmodel-with-dagger-2/)
+ 
+ W klasach rozszerzajacych ViewModel mozemy miec tylko puste konstruktory. Nie mozemy przekazac zadnych
+ argumentow przez konsturktor. Wiec constructor injection nie zdaloby egzaminu.
+ I zeby to obejsc, musimy stworzyc cusotmowy VieModelprovider.Factory
+  
+ ### Multibindings
+ Rozwiazanie problemu. Skomplikowane fest
+ 
+ 
+ 
+ 

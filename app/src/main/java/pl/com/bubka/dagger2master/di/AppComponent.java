@@ -13,7 +13,9 @@ import pl.com.bubka.dagger2master.BaseApplication;
 @Singleton
 @Component(modules = {AndroidSupportInjectionModule.class,
         ActivityBuildersModule.class,
-        AppModule.class})
+        AppModule.class,
+        ViewModelFactoryModule.class
+    })
 public interface AppComponent extends AndroidInjector<BaseApplication> {
 
     @Component.Builder
